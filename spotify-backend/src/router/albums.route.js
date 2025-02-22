@@ -4,3 +4,4 @@ const route=Router();
 route.get('/',(req,res)=>{
     res.send("albums route for GET Method")
 })
+export default route

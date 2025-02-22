@@ -1,6 +1,6 @@
 import { Router } from "express";
+import { authcallback } from "../controller/auth.controller";
 
 const route=Router();
-route.get('/',(req,res)=>{
-    res.send("auth route for GET Method")
-})
+route.post('/callback',authcallback)
+export default route

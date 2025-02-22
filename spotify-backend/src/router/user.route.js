@@ -4,3 +4,4 @@ const route=Router();
 route.get("",(req,res)=>{
     res.send("user route with GET method")
 })
+export default route

@@ -4,3 +4,4 @@ const route=Router();
 route.get('/',(req,res)=>{
     res.send("songs route for GET Method")
 })
+export default route

@@ -7,10 +7,17 @@ import albumsRoute from "./router/albums.route.js"
 import statsRoute from "./router/stats.route.js"
 import songsRoute from "./router/songs.route.js"
 import { connectionDB } from "./lib/db.js";
+import { clerkMiddleware } from "@clerk/express";
+import {fileUpload} from "express-fileupload"
 dotenv.config()
 const app=express();
 const PORT=process.env.PORT
 app.use(express.json()) //to parse req.body
+app.use(clerkMiddleware)//this will add auth to require obj
+app.user(fileUpload({
+    useTempFiles:true,
+    tempFileDir:"/tmp/"
+}))
 app.use('api/users',userRoute)
 app.use('api/auth',authRoute)
 app.use('api/admin',adminRoute)

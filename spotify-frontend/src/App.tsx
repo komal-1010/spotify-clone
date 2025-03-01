@@ -1,18 +1,16 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react"
 import { Button } from "./components/ui/button"
+import { Route, Routes } from "react-router-dom"
+import { HomePage } from "./pages/Home/Home"
+import { AuthCallbackPage } from "./pages/AuthCallback/AuthCallback"
 
 function App() {
   return (
     <>
-    <h1>Spotify App</h1>
-      <SignedOut>
-        <SignInButton>
-          <Button>Sign In</Button>
-        </SignInButton>
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+      <Routes>
+      <Route path="/"element=<HomePage/>/>
+      <Route path="auth-callback" element=<AuthCallbackPage/>/>
+      </Routes>
     </>
   )
 }

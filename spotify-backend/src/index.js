@@ -9,6 +9,7 @@ import songsRoute from "./router/songs.route.js"
 import { connectionDB } from "./lib/db.js";
 import { clerkMiddleware } from "@clerk/express";
 import path from "path";
+import cors from "cors"
 import fileUpload from "express-fileupload";
 dotenv.config()
 const app=express();
@@ -36,6 +37,11 @@ app.use('api/stats',statsRoute)
 app.use((err, req, res, next) => {
 	res.status(500).json({ message: process.env.NODE_ENV === "production" ? "Internal server error" : err.message });
 });
+app.use(cors(
+	{
+		origin:"https:localhost:3000"
+	}
+))
 app.listen(PORT,()=>{
     console.log("server is running on port "+PORT)
     connectionDB()

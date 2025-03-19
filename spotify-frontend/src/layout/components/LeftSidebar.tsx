@@ -1,12 +1,12 @@
-import PlaylistSkeleton from "@/components/skeletons/PlaylistSkeleton";
+// import PlaylistSkeleton from "@/components/skeletons/PlaylistSkeleton";
 import { buttonVariants } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+// import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { useMusicStore } from "@/stores/useMusicStore";
 import { SignedIn } from "@clerk/clerk-react";
 import { HomeIcon, Library, MessageCircle } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useMusicStore } from "../../store/useMusicStore";
 
 const LeftSidebar = () => {
 	const { albums, fetchAlbums, isLoading } = useMusicStore();
@@ -62,10 +62,11 @@ const LeftSidebar = () => {
 					</div>
 				</div>
 
-				<ScrollArea className='h-[calc(100vh-300px)]'>
+				{/* <ScrollArea className='h-[calc(100vh-300px)]'>
 					<div className='space-y-2'>
 						{isLoading ? (
-							<PlaylistSkeleton />
+							<h1>Loading</h1>
+							// <PlaylistSkeleton />
 						) : (
 							albums.map((album) => (
 								<Link
@@ -87,7 +88,7 @@ const LeftSidebar = () => {
 							))
 						)}
 					</div>
-				</ScrollArea>
+				</ScrollArea> */}
 			</div>
 		</div>
 	);

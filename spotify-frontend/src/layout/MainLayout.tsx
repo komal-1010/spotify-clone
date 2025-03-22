@@ -1,10 +1,10 @@
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable.tsx";
 import { Outlet } from "react-router-dom";
 import LeftSidebar from "./components/LeftSidebar";
 // import FriendsActivity from "./components/FriendsActivity";
 // import AudioPlayer from "./components/AudioPlayer";
 // import { PlaybackControls } from "./components/PlaybackControls";
 import { useEffect, useState } from "react";
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "../components/ui/resizable";
 
 const MainLayout = () => {
 	const [isMobile, setIsMobile] = useState(false);
@@ -34,20 +34,8 @@ const MainLayout = () => {
 				<ResizablePanel defaultSize={isMobile ? 80 : 60}>
 					<Outlet />
 				</ResizablePanel>
-
-				{!isMobile && (
-					<>
-						<ResizableHandle className='w-2 bg-black rounded-lg transition-colors' />
-
-						{/* right sidebar */}
-						{/* <ResizablePanel defaultSize={20} minSize={0} maxSize={25} collapsedSize={0}>
-							<FriendsActivity />
-						</ResizablePanel> */}
-					</>
-				)}
 			</ResizablePanelGroup>
-
-			<PlaybackControls />
+				
 		</div>
 	);
 };

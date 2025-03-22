@@ -1,8 +1,7 @@
 import { axiosInstance } from "@/lib/axios";
-import { Album, Song, Stats } from "@/types";
 import toast from "react-hot-toast";
 import { create } from "zustand";
-
+import {Album,Song,Stats} from "@/types";
 interface MusicStore {
 	songs: Song[];
 	albums: Album[];

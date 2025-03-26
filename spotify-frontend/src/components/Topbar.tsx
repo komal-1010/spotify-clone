@@ -3,8 +3,8 @@ import { LayoutDashboardIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import SignInOAuthButtons from "./SignInOAuthButtons";
 import { buttonVariants } from "./ui/button";
-import { useAuthStore } from "../store/useAuthStore";
 import { cn } from "../lib/utils";
+import { useAuthStore } from "../store/useAuthStore";
 
 const Topbar = () => {
 	const { isAdmin } = useAuthStore();
@@ -17,7 +17,7 @@ const Topbar = () => {
     '
 		>
 			<div className='flex gap-2 items-center'>
-				<img src='/spotify.png' className='size-8' alt='Spotify logo' />
+				<img src='/spotify.png' className='size-2' alt='Spotify logo' />
 				Spotify
 			</div>
 			<div className='flex items-center gap-4'>
